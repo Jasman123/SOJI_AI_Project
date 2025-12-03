@@ -1,0 +1,183 @@
+[
+  {
+    "ad_id": "2025-0254",
+    "applicability_rules": {
+      "aircraft_models": [
+        "A320-211",
+        "A320-212",
+        "A320-214",
+        "A320-215",
+        "A320-216",
+        "A320-231",
+        "A320-232",
+        "A320-233",
+        "A321-111",
+        "A321-112",
+        "A321-131"
+      ],
+      "msn_constraints": "all manufacturer serial numbers",
+      "excluded_if_modifications": [
+        "Airbus mod 24591",
+        "Airbus SB A320-57-1089 at Revision 04",
+        "Airbus mod 24977"
+      ],
+      "required_modifications": []
+    }
+  },
+  {
+    "ad_id": "2025-0254",
+    "applicability_rules": {
+      "aircraft_models": [
+        "A321"
+      ],
+      "msn_constraints": "not (MSN 364 or MSN 385)",
+      "excluded_if_modifications": [],
+      "required_modifications": []
+    }
+  },
+  {
+    "ad_id": "2025-0254",
+    "applicability_rules": {
+      "aircraft_models": [
+        "A320"
+      ],
+      "msn_constraints": null,
+      "excluded_if_modifications": [],
+      "required_modifications": [
+        "Group 1 aeroplanes",
+        "Group 2 aeroplanes",
+        "Group 3 aeroplanes"
+      ]
+    }
+  },
+  {
+    "ad_id": "2025-0254",
+    "applicability_rules": {
+      "aircraft_models": [
+        "A320"
+      ],
+      "msn_constraints": "Before exceeding 48000 FC or 96000 FH, whichever occurs first since first flight",
+      "excluded_if_modifications": [
+        "Airbus SB A320-57-1089 original issue",
+        "Airbus SB A320-57-1089 Revision 01",
+        "Airbus SB A320-57-1089 Revision 02",
+        "Airbus SB A320-57-1089 Revision 03"
+      ],
+      "required_modifications": [
+        "Airbus SB A320-57-1089 Revision 04"
+      ]
+    }
+  },
+  {
+    "ad_id": "2025-0254",
+    "applicability_rules": {
+      "aircraft_models": [],
+      "msn_constraints": null,
+      "excluded_if_modifications": [],
+      "required_modifications": []
+    }
+  },
+  {
+    "ad_id": "AD 2025-23-53",
+    "applicability_rules": {
+      "aircraft_models": [
+        "MD-11",
+        "MD-11F",
+        "MD-10-10F",
+        "MD-10-30F",
+        "DC-10-10",
+        "DC-10-10F",
+        "DC-10-15",
+        "DC-10-30",
+        "DC-10-30F (KC-10A and KDC-10)",
+        "DC-10-40",
+        "DC-10-40F"
+      ],
+      "msn_constraints": null,
+      "excluded_if_modifications": [],
+      "required_modifications": []
+    }
+  },
+  {
+    "ad_id": "AD-2025-01681-T",
+    "applicability_rules": {
+      "aircraft_models": [],
+      "msn_constraints": null,
+      "excluded_if_modifications": [],
+      "required_modifications": []
+    }
+  },
+  {
+    "ad_id": "2025-23-51",
+    "applicability_rules": {
+      "aircraft_models": [
+        "MD-11",
+        "MD-11F",
+        "MD-10-10F",
+        "MD-10-30F",
+        "DC-10-10",
+        "DC-10-10F",
+        "DC-10-15",
+        "DC-10-30",
+        "DC-10-30F",
+        "KC-10A",
+        "KDC-10",
+        "DC-10-40",
+        "DC-10-40F"
+      ],
+      "msn_constraints": null,
+      "excluded_if_modifications": [],
+      "required_modifications": []
+    }
+  },
+  {
+    "ad_id": "2025-23-53",
+    "applicability_rules": {
+      "aircraft_models": [],
+      "msn_constraints": null,
+      "excluded_if_modifications": [],
+      "required_modifications": []
+    }
+  },
+  {
+    "ad_id": "2025-23-53",
+    "applicability_rules": {
+      "aircraft_models": [],
+      "msn_constraints": null,
+      "excluded_if_modifications": [],
+      "required_modifications": []
+    }
+  },
+  {
+    "ad_id": "2025-23-51",
+    "applicability_rules": {
+      "aircraft_models": [
+        "MD-11",
+        "MD-11F",
+        "MD-10-10F",
+        "MD-10-30F",
+        "DC-10-10",
+        "DC-10-10F",
+        "DC-10-15",
+        "DC-10-30",
+        "DC-10-30F",
+        "KC-10A",
+        "KDC-10",
+        "DC-10-40",
+        "DC-10-40F"
+      ],
+      "msn_constraints": null,
+      "excluded_if_modifications": [],
+      "required_modifications": []
+    }
+  },
+  {
+    "ad_id": "None",
+    "applicability_rules": {
+      "aircraft_models": [],
+      "msn_constraints": "None",
+      "excluded_if_modifications": [],
+      "required_modifications": []
+    }
+  }
+]
