@@ -28,8 +28,25 @@ def load_pdf(file_path: str) -> str:
     pages_splitter = text_splitter.split_documents(docs)
     return pages_splitter
 
-documents = load_pdf("EASA_AD_2025-0254_1.pdf")
-print(documents)
+def genererate_json_from_pdf(documents) -> List[dict]:
+    results = []
+    for i, doc in enumerate(documents):
+        # print(f"--- PDF Page {i+1} ---")
+        # print(doc.page_content)
+        response = llm.invoke(
+            f"""
+            Extract the applicability rules from the following Airworthiness Directive (AD) text:
+
+            {doc.page_content}
+
+            Provide the output in the specified structured format.
+            """
+        )
+        results.append(response.model_dump())
+
+    return results
+    
+
 
 load_dotenv()
 api_key = os.getenv("GOOGLE_API_KEY")
@@ -41,19 +58,22 @@ llm = ChatGoogleGenerativeAI(
     max_retries=2,
 ).with_structured_output(Rules)
 
-results =[]
-for i, doc in enumerate(documents):
-    print(f"--- PDF Page {i+1} ---")
-    print(doc.page_content)
-    response = llm.invoke(
-        f"""
-        Extract the applicability rules from the following Airworthiness Directive (AD) text:
 
-        {doc.page_content}
 
-        Provide the output in the specified structured format.
-        """
-    )
+if __name__ == "__main__":
 
-    results.append(response.model_dump())
-print(json.dumps(results, indent=2))
+    files = [
+    "EASA_AD_2025-0254_1.pdf",
+    "EASA_AD_US-2025-23-53_1.pdf"
+    ]
+    results = []
+    for f in files:
+        documents = load_pdf(f)
+        results.extend(genererate_json_from_pdf(documents))
+
+    print(json.dumps(results, indent=2))
+
+    with open("ad_results.json", "w") as f:
+        json.dump(results, f, indent=2)
+
+    print("Saved to ad_results.json")
