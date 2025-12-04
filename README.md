@@ -61,5 +61,6 @@ This architecture (chunking → embedding → vector store → retrieval → LLM
 ---
 
 
+<img width="187" height="432" alt="graph_xray" src="https://github.com/user-attachments/assets/153d96ab-88a8-441d-920f-8d496b552f0c" />
 
 
