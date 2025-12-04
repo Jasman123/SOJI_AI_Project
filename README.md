@@ -32,3 +32,39 @@ SOJI_AI_Project/
 ```
 
 
+- `Genererate_json.py` — Script/module responsible for extracting structured data from processed documents, and outputting JSON.  
+- `generate_vectore.py` — Module that reads the extracted data (or text chunks), computes embeddings, and stores them into the vector store (Chroma).  
+- `app_test.py` — Demonstration/test app showing how to query the vector store and perform retrieval or QA tasks.  
+- `ad_results.json` — Example output (structured data) after running the pipeline on sample PDFs.  
+- PDF files — Example or sample documents used for ingestion/testing.  
+- `requirements.txt` — Dependency list for Python environment.  
+
+---
+
+## How It Works (Pipeline Overview)
+
+1. **Document Loading** — Load one or more PDF documents.  
+2. **Text Extraction & Preprocessing** — Extract text from PDF and preprocess (clean up, normalize).  
+3. **Text Splitting / Chunking** — Split long text into chunks to suit embedding model / context window constraints.  
+4. **Embedding Generation** — For each chunk, generate vector embedding (semantic representation).  
+5. **Vector Store Insertion** — Store embeddings (with metadata, e.g. document ID, chunk info) into a vector store (Chroma).  
+6. **Question / Query Handling** — When user provides a question or query:  
+   - Embed the query into a vector.  
+   - Search the vector store for top-k most similar chunks.  
+   - Retrieve the corresponding text chunks (context).  
+7. **Prompt Construction** — Build a prompt that includes the retrieved context + user question (e.g. “Answer based only on the following context …”).  
+8. **LLM Generation** — Use a language model to generate an answer based on the prompt + context (RAG).  
+9. **Return Answer (with References / Metadata)** — Return answer along with source metadata (which document/chunk used), enabling transparency.  
+
+This architecture (chunking → embedding → vector store → retrieval → LLM) is broadly similar to other PDF-to-chatbot systems built with frameworks like LangChain + vector stores (e.g. Chroma). :contentReference[oaicite:2]{index=2}
+
+---
+
+## Getting Started / Usage
+
+1. **Install dependencies**  
+   ```bash
+   pip install -r requirements.txt
+
+
+
