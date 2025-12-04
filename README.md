@@ -5,20 +5,6 @@ This project is built using **RAG (Retrieval-Augmented Generation)**, **LangGrap
 
 ---
 
-## 📁 Project Structure
-
-```text
-SOJI_AI_Project/
-├── Genererate_json.py
-├── generate_vectore.py
-├── app_test.py
-├── ad_results.json
-├── requirements.txt
-└── README.md
-
----
-
-
 
 
 
