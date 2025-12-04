@@ -10,7 +10,7 @@ This project is built using **RAG (Retrieval-Augmented Generation)**, **LangGrap
 - 📄 **PDF Document Ingestion** — Upload or provide PDF documents which the system loads and parses into machine-readable text.  
 - ✂️ **Text Splitting & Chunking** — Split large documents into manageable chunks suitable for embedding.  
 - 🔗 **Vector Embedding Generation** — Convert text chunks into vector embeddings for semantic representation.  
-- 🗄️ **Vector Store** — Store embeddings in a vector database (Chroma) for efficient semantic retrieval. :contentReference[oaicite:0]{index=0}  
+- 🗄️ **Vector Store** — Store embeddings in a vector database (Chroma) for efficient semantic retrieval. 
 - 🔍 **Semantic Search & Retrieval** — Given a query or question, retrieve the most relevant chunks based on embedding similarity.  
 - 💬 **Question-Answering / Retrieval-Augmented Generation** — Use retrieved context to generate answers to user queries (via LLM + prompt templating), enabling a PDF-driven QA/chat interface.  
 - 🧪 **Test Application** — Example or minimal app to demonstrate ingest → vectorize → query → answer pipeline (e.g. `app_test.py` in repo).
@@ -56,7 +56,7 @@ SOJI_AI_Project/
 8. **LLM Generation** — Use a language model to generate an answer based on the prompt + context (RAG).  
 9. **Return Answer (with References / Metadata)** — Return answer along with source metadata (which document/chunk used), enabling transparency.  
 
-This architecture (chunking → embedding → vector store → retrieval → LLM) is broadly similar to other PDF-to-chatbot systems built with frameworks like LangChain + vector stores (e.g. Chroma). :contentReference[oaicite:2]{index=2}
+This architecture (chunking → embedding → vector store → retrieval → LLM) is broadly similar to other PDF-to-chatbot systems built with frameworks like LangChain + vector stores (e.g. Chroma).
 
 ---
 
