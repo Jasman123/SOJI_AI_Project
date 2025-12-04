@@ -18,6 +18,9 @@ with open("cleaned.json", 'r') as f:
         data = json.load(f)
 
 
+def check_rule():
+    pass
+
 
 for item in data_test:
     aircraft_model = item["Aircraft Model"]
@@ -34,20 +37,19 @@ for item in data_test:
             excluded_mods = rule.get("excluded_if_modifications", [])
             required_mods = rule.get("required_modifications", [])
 
-            msn_check = False
-            models_check = False
-            modifications_check = False
+            if aircraft_model in models:
+                 if msn_constraints in [None, "", "None"]:
+                    applicable_ads.append(f"AD ID: {ad['ad_id']} rule modifications: {required_mods} and excluded: {excluded_mods}")       
+                 elif 'all' in msn_constraints.lower():
+                    applicable_ads.append(f"AD ID: {ad['ad_id']} rule modifications: {required_mods} and excluded: {excluded_mods}")
+                 elif 'not' in msn_constraints.lower():
+                     if '364' in str(msn) or '385' in str(msn):
+                        print("skip")
+                        continue
+                     
+            
+            
 
-            # Check aircraft model
-            if aircraft_model not in models:
-                continue
-            # Check MSN constraints
-            msn_constraints = msn_constraints.lower() if msn_constraints else ""
-
-            if msn_constraints not in ["none", "", None, "all"]:
-                continue
-
-            applicable_ads.append(f"AD ID: {ad['ad_id']} - model match , msn check ok/no")
             
                  
 
