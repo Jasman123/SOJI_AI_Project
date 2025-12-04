@@ -126,9 +126,30 @@ memory = MemorySaver()
 react_graph_memory = builder.compile(checkpointer=memory)
 
 
-result = graph.invoke({
-    "messages": [
-        HumanMessage(content="is MD-11 is affected by rule  by FAA AD 2025-23-53 and EASA AD 2025-0254 (yes/no/not applicable)?")
-    ]
-})
-print(result["json_result"])     
+# result = graph.invoke({
+#     "messages": [
+#         HumanMessage(content="is MD-11 is affected by rule  by FAA AD 2025-23-53 and EASA AD 2025-0254 (yes/no/not applicable)?")
+#     ]
+# })
+# print(result["json_result"])     
+
+final_result =[]
+
+for item in data_test:
+    question = f"is {item['Aircraft Model']} with MSN {item['MSN']} and Modifications {item['Modifications']} is affected by rule  by FAA AD 2025-23-53 and EASA AD 2025-0254 (yes/no/not applicable)?"
+    result = graph.invoke({
+        "messages": [
+            HumanMessage(content=question)
+        ]
+    })
+    json_result = result["json_result"]
+    final_result.extend({
+        "Aircraft Model": item['Aircraft Model'],
+        "MSN": item['MSN'],
+        "Modifications": item['Modifications'],
+        "Applicable": json_result.get("applicable", "error"),
+        "Details": json_result
+    })
+    print(json_result)
+
+
