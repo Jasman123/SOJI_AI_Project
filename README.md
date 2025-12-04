@@ -60,7 +60,9 @@ This architecture (chunking → embedding → vector store → retrieval → LLM
 
 ---
 
-
+## LangaGraph for LLMs
 <img width="187" height="432" alt="graph_xray" src="https://github.com/user-attachments/assets/153d96ab-88a8-441d-920f-8d496b552f0c" />
 
+## Example Output
+<img width="1264" height="194" alt="image" src="https://github.com/user-attachments/assets/91c11799-a828-43e1-b6b5-681c0b393f43" />
 
