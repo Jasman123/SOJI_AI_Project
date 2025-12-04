@@ -60,11 +60,6 @@ This architecture (chunking → embedding → vector store → retrieval → LLM
 
 ---
 
-## Getting Started / Usage
-
-1. **Install dependencies**  
-   ```bash
-   pip install -r requirements.txt
 
 
 
